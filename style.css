@@ -1,0 +1,144 @@
+/* © by Nils Ringelmann 2024 */
+
+body {
+    -webkit-user-select: none;
+    user-select: none;
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+    background-color: #2f3136;
+    white-space: nowrap;
+    font-family: Verdana, Tahoma, Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: large;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+
+
+#logo {
+    height: 500px;
+    margin-bottom: -100px;
+    margin-top: -50px;
+}
+
+
+#verbindenButton {
+    box-shadow: 0px 0px 17px 2px rgba(0, 0, 0, 0.6);
+    width: 150px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: #000059;
+    color: white;
+    justify-self: center;
+    border-width: 0;
+    cursor: pointer;
+}
+
+.serverGefunden {
+    background-color: green !important;
+}
+
+.listElement {
+    display: flex;
+    justify-content: center;
+}
+
+#wbsIframe {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    border: none;
+}
+
+
+#suchButton {
+    cursor: pointer;
+    background-color: #000059;
+    border-radius: 0px 10px 10px 0px;
+    border: none;
+    box-shadow: 0px 0px 17px 2px rgba(0, 0, 0, 0.6);
+}
+
+#suchButton img {
+    width: 40px;
+}
+
+#manuellesSuchfeld {
+    border-radius: 10px 0px 0px 10px;
+    box-shadow: 0px 0px 17px 2px rgba(0, 0, 0, 0.6);
+}
+
+#suchfeld {
+    margin-bottom: 75px;
+}
+
+
+
+/*-----------------------------loading spinner-----------------------------*/
+
+#loadingDiv {
+    margin-top: 50px;
+}
+
+
+.lds-ring,
+.lds-ring div {
+    box-sizing: border-box;
+}
+
+.lds-ring {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+
+.lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border: 8px solid currentColor;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: currentColor transparent transparent transparent;
+}
+
+.lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+}
+
+.lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+}
+
+.lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+}
+
+@keyframes lds-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/*-----------------------------loading spinner-----------------------------*/
+
+
+
+/*Load Overlay*/
+#loadOverlay {
+    display: none;
+}
