@@ -23,14 +23,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     // ----------------------- Service Worker Registrieren -----------------------
 
-    
-    
-    if (window.location.href.includes('https://') && !confirm('Die aktuelle Seite ist HTTPS vershlüsselt, daher ist eine automatische Serversuche möglich. Dennoch versuchen?')) {
-        /* continue regardless of error */
+
+    if (window.location.href.includes('https://') && !confirm('Die aktuelle Seite ist HTTPS vershlüsselt, daher ist keine automatische Serversuche möglich. Dennoch versuchen?')) {
+        loadingDiv.style.display = 'none'
     } else {
-        animierterSuchText()
         updateServerSuche()
+        animierterSuchText()
     }
+
 })
 
 
@@ -161,8 +161,8 @@ async function checkManuellWebsiteAndRedirect(url) {
 
 function verbindeMitServer(adress = urlToCheck) { // eslint-disable-line no-unused-vars
     automatischeSucheAbbrechen = true
-    //wbsIframe.src = adress
-    //wbsIframe.style.display = 'block'
-    //document.getElementsByTagName('main')[0].innerHTML = ''
-    window.location.href = adress
+    wbsIframe.src = adress
+    wbsIframe.style.display = 'block'
+    document.getElementsByTagName('main')[0].innerHTML = ''
+    //window.location.href = adress
 }
