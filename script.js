@@ -23,11 +23,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     // ----------------------- Service Worker Registrieren -----------------------
 
-    animierterSuchText()
+    
     
     if (window.location.href.includes('https://') && !confirm('Die aktuelle Seite ist HTTPS vershlüsselt, daher ist eine automatische Serversuche möglich. Dennoch versuchen?')) {
         /* continue regardless of error */
     } else {
+        animierterSuchText()
         updateServerSuche()
     }
 })
