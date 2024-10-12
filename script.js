@@ -161,8 +161,8 @@ async function checkManuellWebsiteAndRedirect(url) {
 
 function verbindeMitServer(adress = urlToCheck) { // eslint-disable-line no-unused-vars
     automatischeSucheAbbrechen = true
-    wbsIframe.src = adress
-    wbsIframe.style.display = 'block'
-    document.getElementsByTagName('main')[0].innerHTML = ''
-    //window.location.href = adress
+    //wbsIframe.src = adress
+    //wbsIframe.style.display = 'block'
+    //document.getElementsByTagName('main')[0].innerHTML = ''
+    window.location.href = adress
 }
