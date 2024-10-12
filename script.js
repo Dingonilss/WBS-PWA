@@ -24,7 +24,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // ----------------------- Service Worker Registrieren -----------------------
 
     animierterSuchText()
-    updateServerSuche()
+    
+    if (window.location.href.includes('https://') && !confirm('Die aktuelle Seite ist HTTPS vershlüsselt, daher ist eine automatische Serversuche möglich. Dennoch versuchen?')) {
+        /* continue regardless of error */
+    } else {
+        updateServerSuche()
+    }
 })
 
 
@@ -158,5 +163,5 @@ function verbindeMitServer(adress = urlToCheck) { // eslint-disable-line no-unus
     //wbsIframe.src = adress
     //wbsIframe.style.display = 'block'
     //document.getElementsByTagName('main')[0].innerHTML = ''
-    window.location.href = urlToCheck
+    window.location.href = adress
 }
